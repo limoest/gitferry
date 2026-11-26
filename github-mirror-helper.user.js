@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         GitHub 国内镜像跳转与加速助手
 // @namespace    https://github.com/github-mirror-helper/github-mirror-helper
-// @version      1.3.0
-// @description  国内网络顺畅访问 GitHub：任意网页点击 GitHub 链接自动跳转镜像、原站直连自动跳转、Release/Raw/Archive/Git Clone 加速、一键节点测速、在线同步最新镜像源与自定义镜像管理（通用油猴脚本）
+// @version      1.3.1
+// @description  国内网络顺畅访问 GitHub：任意网页点击 GitHub 链接自动跳转镜像、原站直连自动跳转、Release/Raw/Archive/Git Clone 加速、一键节点测速与自定义镜像管理（通用油猴脚本）
 // @author       github-mirror-helper
 // @license      MIT
 // @icon         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTI5M2IiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJvbHQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM0ZDM5OSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxMGI5ODEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE2IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDwhLS0gQ3V0ZSBtaW5pbWFsaXN0IGNhdCBoZWFkIC0tPgogIDxwYXRoIGQ9Ik0xNiAyNiBMMTggMTMgQzE4LjMgMTEuMiAyMC41IDEwLjYgMjEuOCAxMS45IEwyNy41IDE3LjYgQzI5IDE3LjIgMzAuNSAxNyAzMiAxNyBDMzMuNSAxNyAzNSAxNy4yIDM2LjUgMTcuNiBMNDIuMiAxMS45IEM0My41IDEwLjYgNDUuNyAxMS4yIDQ2IDEzIEw0OCAyNiBDNTAuNSAyOS41IDUxLjUgMzQgNTAuNSAzOSBDNDkgNDYuNSA0MS41IDUxIDMyIDUxIEMyMi41IDUxIDE1IDQ2LjUgMTMuNSAzOSBDMTIuNSAzNCAxMy41IDI5LjUgMTYgMjYgWiIgZmlsbD0iI2Y4ZmFmYyIvPgogIDwhLS0gSW5uZXIgZWFycyAtLT4KICA8cGF0aCBkPSJNMjAuMiAxNi4yIEwxOS4yIDIzLjIgTDI0LjYgMjAuMiBaIiBmaWxsPSIjZmRhNGFmIiBvcGFjaXR5PSIwLjg1Ii8+CiAgPHBhdGggZD0iTTQzLjggMTYuMiBMNDQuOCAyMy4yIEwzOS40IDIwLjIgWiIgZmlsbD0iI2ZkYTRhZiIgb3BhY2l0eT0iMC44NSIvPgogIDwhLS0gRXllcyAtLT4KICA8Y2lyY2xlIGN4PSIyNC41IiBjeT0iMzMuNSIgcj0iMyIgZmlsbD0iIzBmMTcyYSIvPgogIDxjaXJjbGUgY3g9IjM5LjUiIGN5PSIzMy41IiByPSIzIiBmaWxsPSIjMGYxNzJhIi8+CiAgPGNpcmNsZSBjeD0iMjUuNSIgY3k9IjMyLjQiIHI9IjEiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSI0MC41IiBjeT0iMzIuNCIgcj0iMSIgZmlsbD0iI2ZmZmZmZiIvPgogIDwhLS0gQ3V0ZSBub3NlICYgc21pbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIzMiwzOC44IDMwLDM2LjYgMzQsMzYuNiIgZmlsbD0iI2ZiNzE4NSIvPgogIDxwYXRoIGQ9Ik0yOC41IDQwLjUgUTMwLjIgNDIuMyAzMiA0MC41IFEzMy44IDQyLjMgMzUuNSA0MC41IiBmaWxsPSJub25lIiBzdHJva2U9IiMwZjE3MmEiIHN0cm9rZS13aWR0aD0iMS44IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8IS0tIFdoaXNrZXJzIC0tPgogIDxwYXRoIGQ9Ik0xMCAzNC41IEwxNiAzNS41IE0xMC41IDM5LjUgTDE2IDM4LjggTTU0IDM0LjUgTDQ4IDM1LjUgTTUzLjUgMzkuNSBMNDggMzguOCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPCEtLSBFbWVyYWxkIHNwZWVkIGJhZGdlIC0tPgogIDxjaXJjbGUgY3g9IjUxIiBjeT0iNTEiIHI9IjEwIiBmaWxsPSJ1cmwoI2JvbHQpIiBzdHJva2U9IiMwZjE3MmEiIHN0cm9rZS13aWR0aD0iMi41Ii8+CiAgPHBhdGggZD0iTTUyLjQgNDQuNSBMNDcuMiA1MS42IEw1MC44IDUxLjYgTDQ5LjYgNTcuNSBMNTQuOCA1MC40IEw1MS4yIDUwLjQgWiIgZmlsbD0iI2ZmZmZmZiIvPgo8L3N2Zz4K
@@ -48,7 +48,6 @@
 // @connect      gh.sixyin.com
 // @connect      git.yylx.win
 // @connect      tvv.tw
-// @connect      git.hiwiki.org
 // @connect      fastly.jsdelivr.net
 // @connect      github.com
 // @connect      *
@@ -198,8 +197,6 @@
     { url: "https://hub.glowp.xyz", name: "Glowp 加速" },
     { url: "https://ghproxy.net", name: "GHProxy.net" },
   ];
-
-  const ONLINE_MIRROR_FEED = "https://git.hiwiki.org/data/mirror-speeds.json";
 
   const GITHUB_HOSTS = new Set(["github.com", "www.github.com"]);
   const RAW_FILE_HOSTS = new Set([
@@ -1409,7 +1406,6 @@
   let dockExpanded = false;
   let activeTab = "nodes"; // "nodes" | "tools" | "settings"
   let isTestingSpeed = false;
-  let isSyncingFeed = false;
   let addingType = null; // null | "web" | "file"
 
   function escapeHtml(str) {
@@ -1467,54 +1463,6 @@
     isTestingSpeed = false;
     renderDock(true);
     showToast("✅ 全部节点测速完成");
-  }
-
-  function syncOnlineMirrors() {
-    if (isSyncingFeed) return;
-    isSyncingFeed = true;
-    renderDock(true);
-
-    GM_xmlhttpRequest({
-      method: "GET",
-      url: ONLINE_MIRROR_FEED,
-      timeout: 8000,
-      anonymous: true,
-      onload: (res) => {
-        isSyncingFeed = false;
-        try {
-          const data = JSON.parse(res.responseText || "{}");
-          const list = Array.isArray(data.mirrors) ? data.mirrors : [];
-          const okNodes = list
-            .filter((m) => m && m.status === "ok" && m.base && m.pathPrefix === "https://github.com")
-            .sort((a, b) => (b.speed || 0) - (a.speed || 0))
-            .slice(0, 12);
-          let added = 0;
-          const existing = new Set(getConfig().fileProxies.map((p) => normalizeBaseUrl(p.url)));
-          for (const item of okNodes) {
-            const clean = normalizeBaseUrl(item.base);
-            if (clean && !existing.has(clean)) {
-              addExtraMirror("file", clean);
-              existing.add(clean);
-              added++;
-            }
-          }
-          showToast(added > 0 ? `🔄 已同步 ${added} 个最新高速节点` : "✅ 当前节点列表已是最新");
-        } catch {
-          showToast("⚠️ 解析在线镜像列表失败");
-        }
-        renderDock(true);
-      },
-      onerror: () => {
-        isSyncingFeed = false;
-        showToast("⚠️ 无法连接在线镜像源");
-        renderDock(true);
-      },
-      ontimeout: () => {
-        isSyncingFeed = false;
-        showToast("⚠️ 同步在线镜像超时");
-        renderDock(true);
-      },
-    });
   }
 
   function applyFastestNodes() {
@@ -1644,11 +1592,8 @@
           <button class="ghmh-btn primary" style="flex:1" id="ghmh-speed-btn" ${isTestingSpeed ? "disabled" : ""}>
             ${isTestingSpeed ? "⏳ 测速中..." : "⚡ 一键测速"}
           </button>
-          <button class="ghmh-btn" id="ghmh-sync-btn" title="从在线监控源拉取最新可用高速节点" ${isSyncingFeed ? "disabled" : ""}>
-            ${isSyncingFeed ? "⏳" : "🔄 同步"}
-          </button>
-          ${hasAnySpeed ? '<button class="ghmh-btn" id="ghmh-pick-fastest">🎯 最快</button>' : ""}
-          ${isOnMirror ? '<button class="ghmh-btn" id="ghmh-go-origin">🏠 原站</button>' : ""}
+          ${hasAnySpeed ? '<button class="ghmh-btn" id="ghmh-pick-fastest">🎯 选最快</button>' : ""}
+          ${isOnMirror ? '<button class="ghmh-btn" id="ghmh-go-origin">🏠 回原站</button>' : ""}
         </div>
 
         <div class="ghmh-sec-head">
@@ -1773,7 +1718,6 @@
     }
 
     root.querySelector("#ghmh-speed-btn")?.addEventListener("click", runSpeedTest);
-    root.querySelector("#ghmh-sync-btn")?.addEventListener("click", syncOnlineMirrors);
     root.querySelector("#ghmh-pick-fastest")?.addEventListener("click", applyFastestNodes);
     root.querySelector("#ghmh-go-origin")?.addEventListener("click", goToOriginGitHub);
 
