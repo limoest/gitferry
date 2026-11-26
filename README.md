@@ -27,7 +27,9 @@
    - [Tampermonkey](https://www.tampermonkey.net/)
    - [Violentmonkey](https://violentmonkey.github.io/)
    - 其他兼容标准 `GM_*` API 的用户脚本扩展
-2. 打开 `github-mirror-helper.user.js` 的 Raw 链接（或将本地 `github-mirror-helper.user.js` 拖入脚本管理器）确认安装。
+2. 点击以下任意链接一键安装脚本：
+   - **GitHub 直连安装**：[github-mirror-helper.user.js](https://raw.githubusercontent.com/limoest/github-mirror-helper/main/github-mirror-helper.user.js)
+   - **国内加速安装**：[github-mirror-helper.user.js（镜像通道）](https://gh-proxy.org/https://raw.githubusercontent.com/limoest/github-mirror-helper/main/github-mirror-helper.user.js)
 3. 刷新任意普通网页，点击扩展图标 → **「🚀 打开镜像控制面板 / 测速」**，先跑一次 **「⚡ 一键测速」** 并点击 **「🎯 选最快」** 即可。
 
 ## 🔒 安全提示
