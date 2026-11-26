@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const core = require("./github-mirror-helper.user.js");
+const core = require("./gitferry.user.js");
 
 const mirrors = new Set([
   "bgithub.xyz",

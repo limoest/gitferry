@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name         GitHub 国内镜像跳转与加速助手
-// @namespace    https://github.com/limoest/github-mirror-helper
-// @version      1.3.1
-// @description  国内网络顺畅访问 GitHub：任意网页点击 GitHub 链接自动跳转镜像、原站直连自动跳转、Release/Raw/Archive/Git Clone 加速、一键节点测速与自定义镜像管理（通用油猴脚本）
+// @name         GitHub 渡口 (GitFerry)
+// @namespace    https://github.com/limoest/gitferry
+// @version      1.4.0
+// @description  国内网络顺畅摆渡直达 GitHub：任意网页点击 GitHub 链接自动跳转镜像、原站直连自动跳转、Release/Raw/Archive/Git Clone 加速、一键节点测速与自定义镜像管理
 // @author       limoest
-// @homepageURL  https://github.com/limoest/github-mirror-helper
-// @supportURL   https://github.com/limoest/github-mirror-helper/issues
-// @updateURL    https://raw.githubusercontent.com/limoest/github-mirror-helper/main/github-mirror-helper.user.js
-// @downloadURL  https://raw.githubusercontent.com/limoest/github-mirror-helper/main/github-mirror-helper.user.js
+// @homepageURL  https://github.com/limoest/gitferry
+// @supportURL   https://github.com/limoest/gitferry/issues
+// @updateURL    https://raw.githubusercontent.com/limoest/gitferry/main/gitferry.user.js
+// @downloadURL  https://raw.githubusercontent.com/limoest/gitferry/main/gitferry.user.js
 // @license      MIT
 // @icon         data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0Ij4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzBmMTcyYSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTI5M2IiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJvbHQiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzM0ZDM5OSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxMGI5ODEiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSI2NCIgaGVpZ2h0PSI2NCIgcng9IjE2IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDwhLS0gQ3V0ZSBtaW5pbWFsaXN0IGNhdCBoZWFkIC0tPgogIDxwYXRoIGQ9Ik0xNiAyNiBMMTggMTMgQzE4LjMgMTEuMiAyMC41IDEwLjYgMjEuOCAxMS45IEwyNy41IDE3LjYgQzI5IDE3LjIgMzAuNSAxNyAzMiAxNyBDMzMuNSAxNyAzNSAxNy4yIDM2LjUgMTcuNiBMNDIuMiAxMS45IEM0My41IDEwLjYgNDUuNyAxMS4yIDQ2IDEzIEw0OCAyNiBDNTAuNSAyOS41IDUxLjUgMzQgNTAuNSAzOSBDNDkgNDYuNSA0MS41IDUxIDMyIDUxIEMyMi41IDUxIDE1IDQ2LjUgMTMuNSAzOSBDMTIuNSAzNCAxMy41IDI5LjUgMTYgMjYgWiIgZmlsbD0iI2Y4ZmFmYyIvPgogIDwhLS0gSW5uZXIgZWFycyAtLT4KICA8cGF0aCBkPSJNMjAuMiAxNi4yIEwxOS4yIDIzLjIgTDI0LjYgMjAuMiBaIiBmaWxsPSIjZmRhNGFmIiBvcGFjaXR5PSIwLjg1Ii8+CiAgPHBhdGggZD0iTTQzLjggMTYuMiBMNDQuOCAyMy4yIEwzOS40IDIwLjIgWiIgZmlsbD0iI2ZkYTRhZiIgb3BhY2l0eT0iMC44NSIvPgogIDwhLS0gRXllcyAtLT4KICA8Y2lyY2xlIGN4PSIyNC41IiBjeT0iMzMuNSIgcj0iMyIgZmlsbD0iIzBmMTcyYSIvPgogIDxjaXJjbGUgY3g9IjM5LjUiIGN5PSIzMy41IiByPSIzIiBmaWxsPSIjMGYxNzJhIi8+CiAgPGNpcmNsZSBjeD0iMjUuNSIgY3k9IjMyLjQiIHI9IjEiIGZpbGw9IiNmZmZmZmYiLz4KICA8Y2lyY2xlIGN4PSI0MC41IiBjeT0iMzIuNCIgcj0iMSIgZmlsbD0iI2ZmZmZmZiIvPgogIDwhLS0gQ3V0ZSBub3NlICYgc21pbGUgLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIzMiwzOC44IDMwLDM2LjYgMzQsMzYuNiIgZmlsbD0iI2ZiNzE4NSIvPgogIDxwYXRoIGQ9Ik0yOC41IDQwLjUgUTMwLjIgNDIuMyAzMiA0MC41IFEzMy44IDQyLjMgMzUuNSA0MC41IiBmaWxsPSJub25lIiBzdHJva2U9IiMwZjE3MmEiIHN0cm9rZS13aWR0aD0iMS44IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KICA8IS0tIFdoaXNrZXJzIC0tPgogIDxwYXRoIGQ9Ik0xMCAzNC41IEwxNiAzNS41IE0xMC41IDM5LjUgTDE2IDM4LjggTTU0IDM0LjUgTDQ4IDM1LjUgTTUzLjUgMzkuNSBMNDggMzguOCIgc3Ryb2tlPSIjOTRhM2I4IiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+CiAgPCEtLSBFbWVyYWxkIHNwZWVkIGJhZGdlIC0tPgogIDxjaXJjbGUgY3g9IjUxIiBjeT0iNTEiIHI9IjEwIiBmaWxsPSJ1cmwoI2JvbHQpIiBzdHJva2U9IiMwZjE3MmEiIHN0cm9rZS13aWR0aD0iMi41Ii8+CiAgPHBhdGggZD0iTTUyLjQgNDQuNSBMNDcuMiA1MS42IEw1MC44IDUxLjYgTDQ5LjYgNTcuNSBMNTQuOCA1MC40IEw1MS4yIDUwLjQgWiIgZmlsbD0iI2ZmZmZmZiIvPgo8L3N2Zz4K
 // @match        *://*/*
@@ -1518,9 +1518,9 @@
 
     if (!dockExpanded) {
       const dotCls = isOnGitHub ? "ghmh-dot origin" : "ghmh-dot";
-      const label = isOnMirror ? currentHost : "GitHub 加速";
+      const label = isOnMirror ? currentHost : "GitFerry";
       root.innerHTML = `
-        <button class="ghmh-fab" id="ghmh-open-btn" type="button" title="打开 GitHub 镜像加速面板">
+        <button class="ghmh-fab" id="ghmh-open-btn" type="button" title="打开 GitHub 渡口 (GitFerry)">
           <span class="${dotCls}"></span>
           <span>🚀 ${escapeHtml(label)}</span>
         </button>
@@ -1687,7 +1687,7 @@
       <div class="ghmh-panel">
         <div class="ghmh-header">
           <div class="ghmh-title">
-            <span>🚀 GitHub 加速助手</span>
+            <span>🚀 GitHub 渡口</span>
             <span class="ghmh-pill">${statusText}</span>
           </div>
           <button class="ghmh-icon-btn" id="ghmh-close-btn" type="button" title="收起">×</button>

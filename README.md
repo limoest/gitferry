@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="./icon.svg" width="84" height="84" alt="GitHub Mirror Helper Icon" />
+  <img src="./icon.svg" width="84" height="84" alt="GitFerry Icon" />
 </p>
 
-# 🚀 GitHub 国内镜像跳转与加速助手
+# 🚀 GitHub 渡口 (GitFerry)
 
-一款轻量、干净、通用的浏览器油猴脚本，帮助国内网络环境更顺畅地访问 GitHub、加速下载 Release / Raw / 源码压缩包，并一键生成加速 `git clone` 命令。
+一款轻量、干净、通用的浏览器油猴脚本，摆渡直达 GitHub：解决国内网络访问 GitHub 打不开、加载慢，以及 Release / Raw / 源码压缩包 / `git clone` 下载频繁中断的问题。
 
 全面兼容 **Tampermonkey（篡改猴）**、**Violentmonkey（暴力猴）**、**ScriptCat**、**Stay** 等主流用户脚本管理器。
 
@@ -23,13 +23,10 @@
 
 ## 📦 安装方法
 
-1. 在浏览器安装任意一款用户脚本管理器：
-   - [Tampermonkey](https://www.tampermonkey.net/)
-   - [Violentmonkey](https://violentmonkey.github.io/)
-   - 其他兼容标准 `GM_*` API 的用户脚本扩展
+1. 在浏览器安装任意一款用户脚本管理器（Tampermonkey / Violentmonkey / ScriptCat / Stay 等）。
 2. 点击以下任意链接一键安装脚本：
-   - **GitHub 直连安装**：[github-mirror-helper.user.js](https://raw.githubusercontent.com/limoest/github-mirror-helper/main/github-mirror-helper.user.js)
-   - **国内加速安装**：[github-mirror-helper.user.js（镜像通道）](https://gh-proxy.org/https://raw.githubusercontent.com/limoest/github-mirror-helper/main/github-mirror-helper.user.js)
+   - **GitHub 直连安装**：[gitferry.user.js](https://raw.githubusercontent.com/limoest/gitferry/main/gitferry.user.js)
+   - **国内加速安装**：[gitferry.user.js（镜像通道）](https://gh-proxy.org/https://raw.githubusercontent.com/limoest/gitferry/main/gitferry.user.js)
 3. 刷新任意普通网页，点击扩展图标 → **「🚀 打开镜像控制面板 / 测速」**，先跑一次 **「⚡ 一键测速」** 并点击 **「🎯 选最快」** 即可。
 
 ## 🔒 安全提示
@@ -41,7 +38,7 @@
 ## 🧪 本地测试
 
 ```bash
-node --check github-mirror-helper.user.js
+node --check gitferry.user.js
 node test.mjs
 ```
 
